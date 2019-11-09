@@ -5,7 +5,7 @@ head
     script.
         var nombres = !{JSON.stringify(names)}
 body
-    .main-div
+    .main-div 
         h1 Pug File
         .input-container
             span Nombre 
@@ -15,5 +15,7 @@ body
         .names-container
             ul 
                 each name in names
-                    li#target #{name}
-               
+                    li#target #{name} 
+                        button.send-delete-button X  
+            
+             

@@ -13,3 +13,21 @@ $(document).ready(function() {
         }
     })
 })
+
+$(document).ready(function() {
+    // declare eliminate point
+    $('.send-delete-button').click(function() {
+        // declaration of varibles
+        let Nname = $(this).closest('#target').clone().children().remove().end().text();
+        // 
+        let name = Nname.replace(" ","");
+        console.log(Nname);
+        $(this).closest('#target').remove();
+        $.post('/eliminate', {name:Nname}, function(data, status){
+            //log the message to console
+            console.log(`${data.message} and status is ${status}`);
+        alert(data.message + " eliminated");
+        });
+    });
+});
+

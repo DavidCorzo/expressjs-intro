@@ -20,4 +20,13 @@ app.post('/save-user', function(req, res) {
     res.json({message:"New name added"})
 })
 
+//
+app.post("/eliminate", function(req,res) {
+        console.log(req.body);
+        names = names.filter(e => e !== req.body.name);
+        res.json({message:"Eliminated from database"});
+    }
+);
+//
+
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
